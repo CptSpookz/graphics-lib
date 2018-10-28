@@ -339,6 +339,10 @@ int DrawObject(hobject* ob, window* win, viewport* vpt, bufferdevice* dev) {
   return 0;
 }
 
+int Fill(hobject* obj, window* win, viewport* vpt, bufferdevice* dev, int color) {
+  return 0;
+}
+
 hobject* Rotate(hobject * ob, float theta) {
   hobject* oob;
   hmatrix* rotmatrix;
@@ -350,7 +354,6 @@ hobject* Rotate(hobject * ob, float theta) {
     SetHObject(LinearTransf(rotmatrix,&ob->points[i]),oob);
   }
 
-  free(rotmatrix);
   return oob;
 }
   
@@ -377,7 +380,6 @@ hobject* Scale(hobject* ob, float sx, float sy) {
     SetHObject(LinearTransf(sclmatrix,&ob->points[i]),oob);
   }
   
-  free(sclmatrix);
   return oob;  
 }
 
@@ -388,11 +390,10 @@ hobject* Shear(hobject* ob, float sx, float sy) {
 
    oob = CreateHObject(ob->numbers_of_points);
    shrmatrix = SetShrMatrix(sx, sy);
-   for(i = 0; i < ob->numbers_of_points; i++){
+   for(i = 0; i < ob->numbers_of_points; i++) {
        SetHObject(LinearTransf(shrmatrix,&ob->points[i]),oob);
    }
 
-   free(shrmatrix);
    return oob;
 }
 
@@ -404,7 +405,8 @@ hpoint * LinearTransf(hmatrix * m, hpoint * p) {
   pt->x = m->a11*p->x + m->a12*p->y + m->a13*p->w;
   pt->y = m->a21*p->x + m->a22*p->y + m->a23*p->w;
   pt->w = m->a31*p->x + m->a32*p->y + m->a33*p->w;
-  
+  pt->color = p->color;
+
   return pt;
 }
 

@@ -1,6 +1,5 @@
 CC = clang
 CFLAGS = cg2d.o -Wall -lm -lX11
-PROGS = exercicio
 
 all: $(PROGS) 
 
