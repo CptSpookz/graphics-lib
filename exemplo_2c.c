@@ -47,20 +47,20 @@ int main(int argc, char ** argv) {
   DrawObject(poligono2,janela,porta1,monitor,4);
 
   porta2 = CreateViewPort(280, 100, 600, 250);
-  poligono3 = TransObj(poligono1, SetCisMatrix(0.1,0.0));
-  poligono4 = TransObj(poligono2, SetCisMatrix(0.1,0.0));
+  poligono3 = TransObj(poligono1, SetSkwMatrix(0.1,0.0));
+  poligono4 = TransObj(poligono2, SetSkwMatrix(0.1,0.0));
   DrawObject(poligono3,janela,porta2,monitor,2);
   DrawObject(poligono4,janela,porta2,monitor,2);
 
   porta3 = CreateViewPort(50, 270, 300, 450);
-  poligono3 = TransObj(poligono1, SetCisMatrix(0.15,0.0));
-  poligono4 = TransObj(poligono2, SetCisMatrix(0.15,0.0));
+  poligono3 = TransObj(poligono1, SetSkwMatrix(0.15,0.0));
+  poligono4 = TransObj(poligono2, SetSkwMatrix(0.15,0.0));
   DrawObject(poligono3,janela,porta3,monitor,1);
   DrawObject(poligono4,janela,porta3,monitor,1);
 
   porta4 = CreateViewPort(350, 310, 630, 470);
-  poligono3 = TransObj(poligono1, SetCisMatrix(0.2,0.0));
-  poligono4 = TransObj(poligono2, SetCisMatrix(0.2,0.0));
+  poligono3 = TransObj(poligono1, SetSkwMatrix(0.2,0.0));
+  poligono4 = TransObj(poligono2, SetSkwMatrix(0.2,0.0));
   DrawObject(poligono3,janela,porta4,monitor,3);
   DrawObject(poligono4,janela,porta4,monitor,3);
  

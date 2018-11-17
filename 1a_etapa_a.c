@@ -56,9 +56,9 @@ int main() {
     DrawObject(regular.outer,janela,vport1,dispositivo,3);  // desenha a parte de dentro do B da janela no buffer do dispositivo
 
     vport2 = CreateViewPort(310, 150, 460, 300);
-    italico.inner1 = TransObj(regular.inner1, SetCisMatrix(0.45,0.0));
-    italico.inner2 = TransObj(regular.inner2, SetCisMatrix(0.45,0.0));
-    italico.outer = TransObj(regular.outer, SetCisMatrix(0.45,0.0));
+    italico.inner1 = TransObj(regular.inner1, SetSkwMatrix(0.45,0.0));
+    italico.inner2 = TransObj(regular.inner2, SetSkwMatrix(0.45,0.0));
+    italico.outer = TransObj(regular.outer, SetSkwMatrix(0.45,0.0));
     DrawObject(italico.inner1,janela,vport2,dispositivo,3); // desenha a primeira parte de dentro do B (itálico) da janela no buffer do dispositivo
     DrawObject(italico.inner2,janela,vport2,dispositivo,3); // desenha a segunda parte de dentro do B (itálico) da janela no buffer do dispositivo
     DrawObject(italico.outer,janela,vport2,dispositivo,3);  // desenha a parte de dentro do B (itálico) da janela no buffer do dispositivo

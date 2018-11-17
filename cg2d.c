@@ -304,6 +304,26 @@ int DrawObject(object * ob, window * win, viewport * port, bufferdevice * dev, i
   return 0;
   }
 
+int FillObject(object * ob, window * win, viewport * port, bufferdevice * dev, int color) {
+  // 1. Encontrar ymax e ymin
+  int i;
+  float ymin, ymax;
+  ymin = INT_MAX;
+  ymax = INT_MIN;
+
+  for(i = 0; i < ob->numbers_of_points; i++){
+      if(ob->points[i].y < ymin) {
+          ymin = ob->points[i].y;
+      }
+      else if(ob->points[i].y > ymax) {
+          ymax = ob->points[i].y;
+      }
+  }
+  // 2. Encontrar intersecções linha a linha do poligono
+  
+  return 0;
+}
+
 matrix * SetRotMatrix(float theta) {
   matrix * m;
 
@@ -348,7 +368,7 @@ matrix * SetSftMatrix(float dx, float dy) {
   return m;
   }
 
-matrix * SetCisMatrix(float Sx, float Sy) {
+matrix * SetSkwMatrix(float Sx, float Sy) {
   // Matrizes de cisalhamento não são comutativas.
   // A composição de duas matrizes para essa operação,
   // considerando que cada uma gera o cisalhamento em 

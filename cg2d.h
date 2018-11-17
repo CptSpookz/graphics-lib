@@ -10,6 +10,7 @@
 */
 
 #include <math.h>
+#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <X11/Xlib.h>
@@ -116,7 +117,7 @@ int DrawObject(object *, window *, viewport *, bufferdevice *, int);
 matrix * SetRotMatrix(float);
 matrix * SetSclMatrix(float, float);
 matrix * SetSftMatrix(float, float);
-matrix * SetCisMatrix(float, float);
+matrix * SetSkwMatrix(float, float);
 point * LinearTransf(matrix *, point *);
 matrix * ComposeMatrix(matrix *, matrix *);
 
